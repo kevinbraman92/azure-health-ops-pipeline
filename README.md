@@ -115,11 +115,13 @@ SELECT * FROM dbo.vw_ETL_Run_Summary;
 ```
 SELECT * FROM dbo.vw_ETL_Run_DQ_Breakdown;
 ```
+<p align="center"> <img src="img/DataQualityView.PNG" alt="Data Quality Breakdown View" width="700"/> <br/> <em>Figure 4. Aggregated reject counts per data-quality rule (e.g., OVERPAID, DATE_ORDER, BAD_STATUS).</em> </p>
 
 ### Data Quality Claims Summary
 ```
 SELECT * FROM dbo.vw_DQ_Claim_Summary;
 ```
+<p align="center"> <img src="img/DataQualityClaimSummary.PNG" alt="Data Quality Claim Summary View" width="700"/> <br/> <em>Figure 5. Detailed breakdown of rejected claims, showing validation errors and affected data fields.</em> </p>
 
 ---
 
