@@ -23,7 +23,7 @@ It’s designed to mirror what a professional Data Engineer would build in an en
 ## ☁️ Azure Blob Storage
 
 <p align="center">
-  <img src="img/CSVBlobStorage.PNG" alt="Azure Blob Storage" width="700"/>
+  <img src="img/CSVBlobStorage.PNG" alt="Azure Blob Storage" width="1000"/>
   <br/>
   <em>Figure 1. CSVs uploaded to the Azure Blob 'landing' container for ingestion.</em>
 </p>
