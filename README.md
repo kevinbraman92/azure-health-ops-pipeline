@@ -49,46 +49,53 @@ pip install -r requirements.txt
 
 ### 2️⃣ Configure Credentials (config/.env)
 
-AZSQL_SERVER=your-server.database.windows.net
+```AZSQL_SERVER=your-server.database.windows.net
 AZSQL_DB=db-healthops
 AZSQL_USER=sqladminkb
 AZSQL_PASSWORD=yourpassword
 
 AZURE_STORAGE_CONNECTION_STRING=DefaultEndpointsProtocol=...
 AZURE_STORAGE_CONTAINER=landing
+```
 
 ### 3️⃣ Deploy Database Objects
 
-sqlcmd -S your-server.database.windows.net -d db-healthops -U sqladminkb -P "YOUR_PASSWORD" -N -b -i "sql\00_init_db.sql"
+```sqlcmd -S your-server.database.windows.net -d db-healthops -U sqladminkb -P "YOUR_PASSWORD" -N -b -i "sql\00_init_db.sql"
 sqlcmd -S your-server.database.windows.net -d db-healthops -U sqladminkb -P "YOUR_PASSWORD" -N -b -i "sql\02_upsert_objects.sql"
 sqlcmd -S your-server.database.windows.net -d db-healthops -U sqladminkb -P "YOUR_PASSWORD" -N -b -i "sql\03_data_quality.sql"
 sqlcmd -S your-server.database.windows.net -d db-healthops -U sqladminkb -P "YOUR_PASSWORD" -N -b -i "sql\04_audit.sql"
+```
 
 ### 4️⃣ Run End-to-End Pipeline
 
-..\run_etl.bat or python scripts/etl_load.py directly
+```..\run_etl.bat or python scripts/etl_load.py directly
+```
 
 
 ### 🧠 Example Output
 
-Run 24 complete. Final Claim rows: 11. Rejects this run: 5
+```Run 24 complete. Final Claim rows: 11. Rejects this run: 5
 DQ rejects in last 24h:
 BAD_STATUS: 1
 DATE_ORDER: 1
 FK_NOT_FOUND: 1
 NEGATIVE_AMOUNT: 1
 OVERPAID: 1
+```
 
 ---
 
 ## 📊 SQL Views for Analytics
 
 ### Run History
+```
 SELECT * FROM dbo.vw_ETL_Run_Summary;
+```
 
 ### Data Quality Breakdown
+```
 SELECT * FROM dbo.vw_ETL_Run_DQ_Breakdown;
-
+```
 ---
 
 ## 💡 Highlights
