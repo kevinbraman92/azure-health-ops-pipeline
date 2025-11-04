@@ -20,6 +20,33 @@ It’s designed to mirror what a professional Data Engineer would build in an en
 
 ---
 
+## 💡 Highlights
+
+✅ **Fully idempotent** MERGE loads — re-runs never duplicate data  
+✅ **Data quality rules** with reject table logging  
+✅ **Auditing and metadata** per ETL run  
+✅ **Automatable** via Azure Data Factory  
+✅ **Portable** Python ETL + SQL hybrid design  
+✅ **Ready for Power BI** dashboards on views  
+
+---
+
+## ⚙️ Features
+
+| Layer | Capability |
+|-------|-------------|
+| **Ingestion** | Reads CSVs directly from Azure Blob via `azure-storage-blob` |
+| **Transformation** | Cleans, standardizes, and coerces schema in pandas |
+| **Load** | Bulk inserts to staging tables using SQLAlchemy |
+| **Idempotent Upserts** | SQL `MERGE` procedures ensure re-runs never duplicate rows |
+| **Data Quality** | Invalid rows (bad FKs, negatives, overpaid, etc.) are written to `Reject_Claim` |
+| **Auditing** | Every run logged in `ETL_Run` with timestamps and record counts |
+| **Automation** | `run_etl.bat` automates SQL + Python execution in one click |
+| **Scalability** | Fully orchestratable in Azure Data Factory |
+| **Visualization** | `vw_DQ_Claim_Summary` & `vw_ETL_Run_Summary` feed dashboards (Power BI) |
+
+---
+
 ## ☁️ Azure Blob Storage
 
 <p align="center">
@@ -36,23 +63,6 @@ It’s designed to mirror what a professional Data Engineer would build in an en
   <em>Figure 2. Azure SQL Database hosting staging, final, and audit tables for the ETL pipeline.</em>
 </p>
 
----
-
-## ⚙️ Features
-
-| Layer | Capability |
-|-------|-------------|
-| **Ingestion** | Reads CSVs directly from Azure Blob via `azure-storage-blob` |
-| **Transformation** | Cleans, standardizes, and coerces schema in pandas |
-| **Load** | Bulk inserts to staging tables using SQLAlchemy |
-| **Idempotent Upserts** | SQL `MERGE` procedures ensure re-runs never duplicate rows |
-| **Data Quality** | Invalid rows (bad FKs, negatives, overpaid, etc.) are written to `Reject_Claim` |
-| **Auditing** | Every run logged in `ETL_Run` with timestamps and record counts |
-| **Automation** | `run_etl.bat` automates SQL + Python execution in one click |
-| **Scalability** | Fully orchestratable in Azure Data Factory |
-| **Visualization** | `vw_DQ_Claim_Summary` & `vw_ETL_Run_Summary` feed dashboards (Power BI / Streamlit) |
-
----
 
 ## 🚀 How to Run Locally
 
@@ -125,14 +135,13 @@ SELECT * FROM dbo.vw_DQ_Claim_Summary;
 
 ---
 
-## 💡 Highlights
+## 📊 Power BI Dashboard
 
-✅ **Fully idempotent** MERGE loads — re-runs never duplicate data  
-✅ **Data quality rules** with reject table logging  
-✅ **Auditing and metadata** per ETL run  
-✅ **Automatable** via Azure Data Factory  
-✅ **Portable** Python ETL + SQL hybrid design  
-✅ **Ready for Power BI** dashboards on views  
+<p align="center">
+  <img src="img/PowerBISample.PNG" alt="Power BI Dashboard Overview" width="700"/>
+  <br/>
+  <em>Figure 6. Power BI dashboard sample showing ETL performance and data quality trends.</em>
+</p>
 
 ---
 
@@ -155,5 +164,5 @@ SELECT * FROM dbo.vw_DQ_Claim_Summary;
 
 ---
 
-
+⭐ *If this project inspires you or helps your workflow, consider giving it a star!*
 
