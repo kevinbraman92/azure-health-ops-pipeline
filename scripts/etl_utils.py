@@ -249,6 +249,5 @@ def _coerce_types(df: pd.DataFrame, mapping: Dict[str, str]) -> pd.DataFrame:
         elif target == "str":
             out[col] = out[col].astype(str).str.strip()
         else:
-            # Fallback: cast to string unless you intentionally add more handlers above.
             out[col] = out[col].astype(str).str.strip()
     return out

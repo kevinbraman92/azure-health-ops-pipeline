@@ -235,7 +235,6 @@ def main() -> None:
             "AmountBilled","AmountPaid","Status","DateSubmitted","DatePaid"
         ]])
 
-        # Snapshot staging counts
         with engine.begin() as conn:
             stg_counts = {
                 "provider": conn.execute(text("SELECT COUNT(*) FROM dbo.StgProvider")).scalar_one(),
