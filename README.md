@@ -97,6 +97,12 @@ SELECT * FROM dbo.vw_ETL_Run_Summary;
 ```
 SELECT * FROM dbo.vw_ETL_Run_DQ_Breakdown;
 ```
+
+### Data Quality Claims Summary
+```
+SELECT * FROM dbo.vw_DQ_Claim_Summary;
+```
+
 ---
 
 ## 💡 Highlights
