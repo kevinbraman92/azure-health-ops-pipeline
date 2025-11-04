@@ -31,7 +31,7 @@ It’s designed to mirror what a professional Data Engineer would build in an en
 ## 🧱 Azure SQL Database
 
 <p align="center">
-  <img src="img/AzureSQLDatabase.PNG" alt="Azure SQL Server Tables" width="500"/>
+  <img src="img/AzureSQLDatabase.PNG" alt="Azure SQL Server Tables" width="350"/>
   <br/>
   <em>Figure 2. Azure SQL Database hosting staging, final, and audit tables for the ETL pipeline.</em>
 </p>
