@@ -47,23 +47,6 @@ It’s designed to mirror what a professional Data Engineer would build in an en
 
 ---
 
-## ☁️ Azure Blob Storage
-
-<p align="center">
-  <img src="img/CSVBlobStorage.PNG" alt="Azure Blob Storage" width="1000"/>
-  <br/>
-  <em>Figure 1. CSVs uploaded to the Azure Blob 'landing' container for ingestion.</em>
-</p>
-
-## 🧱 Azure SQL Database
-
-<p align="center">
-  <img src="img/AzureSQLDatabase.PNG" alt="Azure SQL Server Tables" width="350"/>
-  <br/>
-  <em>Figure 2. Azure SQL Database hosting staging, final, and audit tables for the ETL pipeline.</em>
-</p>
-
-
 ## 🚀 How to Run Locally
 
 ### 1️⃣ Setup Environment
@@ -110,6 +93,24 @@ FK_NOT_FOUND: 1
 NEGATIVE_AMOUNT: 1
 OVERPAID: 1
 ```
+
+---
+
+## ☁️ Azure Blob Storage
+
+<p align="center">
+  <img src="img/CSVBlobStorage.PNG" alt="Azure Blob Storage" width="1000"/>
+  <br/>
+  <em>Figure 1. CSVs uploaded to the Azure Blob 'landing' container for ingestion.</em>
+</p>
+
+## 🧱 Azure SQL Database
+
+<p align="center">
+  <img src="img/AzureSQLDatabase.PNG" alt="Azure SQL Server Tables" width="350"/>
+  <br/>
+  <em>Figure 2. Azure SQL Database hosting staging, final, and audit tables for the ETL pipeline.</em>
+</p>
 
 ---
 
