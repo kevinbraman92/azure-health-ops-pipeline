@@ -18,6 +18,12 @@ It ingests healthcare-style CSV data (providers, patients, claims) from **Azure 
 
 It’s designed to mirror what a professional Data Engineer would build in an enterprise healthcare environment—clean, modular, automated, and fully observable.
 
+---
+
+### 🗂️ Azure Blob Storage Container
+
+Below is the **Azure Blob Storage** container where CSV files are uploaded and read by the ETL pipeline:
+
 ![Azure Blob Storage](img/CSVBlobStorage.PNG)
 
 ---
