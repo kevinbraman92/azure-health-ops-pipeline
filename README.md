@@ -67,8 +67,8 @@ sqlcmd -S your-server.database.windows.net -d db-healthops -U sqladminkb -P "YOU
 ```
 
 ### 4️⃣ Run End-to-End Pipeline
-
-```..\run_etl.bat or python scripts/etl_load.py directly
+```
+..\run_etl.bat or python scripts/etl_load.py directly
 ```
 
 
