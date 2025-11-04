@@ -28,6 +28,14 @@ It’s designed to mirror what a professional Data Engineer would build in an en
   <em>Figure 1. CSVs uploaded to the Azure Blob 'landing' container for ingestion.</em>
 </p>
 
+## 🧱 Azure SQL Database
+
+<p align="center">
+  <img src="img/AzureSQLDatabase.PNG" alt="Azure SQL Server Tables" width="700"/>
+  <br/>
+  <em>Figure 2. Azure SQL Database hosting staging, final, and audit tables for the ETL pipeline.</em>
+</p>
+
 ---
 
 ## ⚙️ Features
