@@ -40,7 +40,7 @@ It’s designed to mirror what a professional Data Engineer would build in an en
 
 ## 1️⃣ Setup Environment
 
-```bash
+bash
 cd scripts
 python -m venv .venv
 . .venv/Scripts/activate
