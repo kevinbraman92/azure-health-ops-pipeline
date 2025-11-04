@@ -27,8 +27,8 @@ It’s designed to mirror what a professional Data Engineer would build in an en
   <br/>
   <em>Figure 1. CSVs uploaded to the Azure Blob 'landing' container for ingestion.</em>
 </p>
----
 
+---
 
 ## ⚙️ Features
 
