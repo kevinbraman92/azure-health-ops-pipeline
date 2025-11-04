@@ -1,0 +1,6 @@
+pandas
+SQLAlchemy>=2.0
+pyodbc
+python-dotenv
+tenacity
+azure-storage-blob>=12.20
