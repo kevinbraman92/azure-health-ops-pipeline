@@ -109,6 +109,7 @@ OVERPAID: 1
 ```
 SELECT * FROM dbo.vw_ETL_Run_Summary;
 ```
+<p align="center"> <img src="img/ETLRunSummary.PNG" alt="ETL Run Summary View" width="700"/> <br/> <em>Figure 3. Summary of recent ETL runs with record counts, timestamps, and statuses.</em> </p>
 
 ### Data Quality Breakdown
 ```
