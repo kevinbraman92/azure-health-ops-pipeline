@@ -13,9 +13,10 @@ from typing import Dict, Optional
 from sqlalchemy import create_engine, text
 from dotenv import load_dotenv
 from etl_utils import (
-    build_sqlalchemy_url,
-    read_csv_from_blob,
-    _split_single_column_csv,   
+    _build_sqlalchemy_url,
+    _read_csv_from_blob,
+    _split_single_column_csv,
+    _coerce_types  
 )
 
 
@@ -28,7 +29,7 @@ database = os.environ["AZSQL_DB"]
 username = os.environ["AZSQL_USER"]
 password = os.environ["AZSQL_PASSWORD"]
 
-conn_url = build_sqlalchemy_url(server, database, username, password)
+conn_url = _build_sqlalchemy_url(server, database, username, password)
 engine = create_engine(conn_url, fast_executemany=True)
 
 # Blob config
@@ -36,28 +37,6 @@ container = os.environ.get("AZURE_STORAGE_CONTAINER", "landing")
 
 def log(msg: str):
     print(f"[{time.strftime('%H:%M:%S')}] {msg}", flush=True)
-
-
-def _coerce_types(df: pd.DataFrame, mapping: Dict[str, str]) -> pd.DataFrame:
-    """
-    Enforce explicit column types on a DataFrame prior to load/merge.
-    See the earlier documented version; unchanged behavior.
-    """
-    out = df.copy()
-    for col, target in mapping.items():
-        if col not in out.columns:
-            continue
-        if target.startswith("datetime"):
-            out[col] = pd.to_datetime(out[col], errors="coerce", utc=False)
-        elif target == "float":
-            out[col] = pd.to_numeric(out[col], errors="coerce")
-        elif target == "int":
-            out[col] = pd.to_numeric(out[col], errors="coerce").astype("Int64")
-        elif target == "str":
-            out[col] = out[col].astype(str).str.strip()
-        else:
-            out[col] = out[col].astype(str).str.strip()
-    return out
 
 
 def truncate_staging(conn) -> None:
@@ -118,7 +97,6 @@ def start_run() -> int:
     return int(run_id)
 
 
-
 def update_run_counts(run_id: int,
                       stg_counts: Dict[str, int],
                       final_counts: Dict[str, int],
@@ -172,7 +150,6 @@ def finish_run(run_id: int, status: str) -> None:
         """), dict(st=status, rid=run_id))
 
 
-
 def main() -> None:
     """
     Orchestrate idempotent upserts:
@@ -190,9 +167,9 @@ def main() -> None:
     run_id = start_run()
     try:
         # 1) Read CSVs from Blob, robust to BOM/single-column cases
-        providers = read_csv_from_blob(container, "providers.csv", sep=",", encoding="utf-8-sig")
-        patients  = read_csv_from_blob(container, "patients.csv",  sep=",", encoding="utf-8-sig")
-        claims    = read_csv_from_blob(container, "claims.csv",    sep=",", encoding="utf-8-sig")
+        providers = _read_csv_from_blob(container, "providers.csv", sep=",", encoding="utf-8-sig")
+        patients  = _read_csv_from_blob(container, "patients.csv",  sep=",", encoding="utf-8-sig")
+        claims    = _read_csv_from_blob(container, "claims.csv",    sep=",", encoding="utf-8-sig")
 
         providers.columns = [c.strip() for c in providers.columns]
         patients.columns  = [c.strip() for c in patients.columns]

@@ -44,7 +44,7 @@ def _pick_sql_driver() -> str:
     )
 
 
-def build_sqlalchemy_url(server: str, database: str, username: str, password: str) -> str:
+def _build_sqlalchemy_url(server: str, database: str, username: str, password: str) -> str:
     """
     Construct a full SQLAlchemy connection string for Azure SQL Database.
 
@@ -75,7 +75,7 @@ def build_sqlalchemy_url(server: str, database: str, username: str, password: st
     return f"mssql+pyodbc:///?odbc_connect={quote_plus(params)}"
 
 
-def get_blob_client() -> BlobServiceClient:
+def _get_blob_client() -> BlobServiceClient:
     """
     Create and return an Azure BlobServiceClient using the connection string
     found in the environment variable `AZURE_STORAGE_CONNECTION_STRING`.
@@ -96,7 +96,7 @@ def get_blob_client() -> BlobServiceClient:
     return BlobServiceClient.from_connection_string(conn_str)
 
 
-def read_csv_from_blob(
+def _read_csv_from_blob(
     container: str,
     blob_name: str,
     **read_csv_kwargs: Dict[str, Any]
@@ -127,7 +127,7 @@ def read_csv_from_blob(
              Name          Region     Specialty
         0  North Clinic    Midwest   Primary Care
     """
-    bsc = get_blob_client()
+    bsc = _get_blob_client()
     blob = bsc.get_blob_client(container=container, blob=blob_name)
 
     # Download blob contents to memory
