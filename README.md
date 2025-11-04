@@ -20,12 +20,13 @@ It’s designed to mirror what a professional Data Engineer would build in an en
 
 ---
 
-### 🗂️ Azure Blob Storage Container
+## ☁️ Azure Blob Storage
 
-Below is the **Azure Blob Storage** container where CSV files are uploaded and read by the ETL pipeline:
-
-![Azure Blob Storage](img/CSVBlobStorage.PNG)
-
+<p align="center">
+  <img src="img/CSVBlobStorage.PNG" alt="Azure Blob Storage" width="700"/>
+  <br/>
+  <em>Figure 1. CSVs uploaded to the Azure Blob 'landing' container for ingestion.</em>
+</p>
 ---
 
 
