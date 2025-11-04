@@ -34,7 +34,6 @@ It’s designed to mirror what a professional Data Engineer would build in an en
 | **Scalability** | Fully orchestratable in Azure Data Factory |
 | **Visualization** | `vw_DQ_Claim_Summary` & `vw_ETL_Run_Summary` feed dashboards (Power BI / Streamlit) |
 
-
 ---
 
 ## 🚀 How to Run Locally
