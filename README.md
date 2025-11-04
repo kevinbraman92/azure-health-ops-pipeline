@@ -3,7 +3,6 @@
 [![Azure](https://img.shields.io/badge/Azure-Data%20Factory-blue?logo=microsoftazure)](https://azure.microsoft.com)
 [![Python](https://img.shields.io/badge/Python-ETL-yellow?logo=python)](https://www.python.org)
 [![SQL Server](https://img.shields.io/badge/SQL-Server-red?logo=microsoftsqlserver)](https://learn.microsoft.com/sql)
-[![Power BI](https://img.shields.io/badge/Power%20BI-Dashboard-F2C811?logo=powerbi)](https://powerbi.microsoft.com)
 
 > **Author:** [Kevin Braman](https://www.linkedin.com/in/kevin-braman-a7974a129/)  
 > **GitHub:** [kevinbraman92](https://github.com/kevinbraman92)  
