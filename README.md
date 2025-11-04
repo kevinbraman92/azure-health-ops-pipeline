@@ -18,7 +18,7 @@ It ingests healthcare-style CSV data (providers, patients, claims) from **Azure 
 
 It’s designed to mirror what a professional Data Engineer would build in an enterprise healthcare environment—clean, modular, automated, and fully observable.
 
-![Azure Blob Storage](img/CSVBlobStorage.png)
+![Azure Blob Storage](img/CSVBlobStorage.PNG)
 
 ---
 
