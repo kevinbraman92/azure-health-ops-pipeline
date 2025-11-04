@@ -38,15 +38,15 @@ It’s designed to mirror what a professional Data Engineer would build in an en
 
 ## 🚀 How to Run Locally
 
-## 1️⃣ Setup Environment
+### 1️⃣ Setup Environment
 
-bash
+'''bash
 cd scripts
 python -m venv .venv
 . .venv/Scripts/activate
-pip install -r requirements.txt
+pip install -r requirements.txt'''
 
-## 2️⃣ Configure Credentials (config/.env)
+### 2️⃣ Configure Credentials (config/.env)
 
 AZSQL_SERVER=your-server.database.windows.net
 AZSQL_DB=db-healthops
@@ -56,20 +56,19 @@ AZSQL_PASSWORD=yourpassword
 AZURE_STORAGE_CONNECTION_STRING=DefaultEndpointsProtocol=...
 AZURE_STORAGE_CONTAINER=landing
 
-## 3️⃣ Deploy Database Objects
+### 3️⃣ Deploy Database Objects
 
 sqlcmd -S your-server.database.windows.net -d db-healthops -U sqladminkb -P "YOUR_PASSWORD" -N -b -i "sql\00_init_db.sql"
 sqlcmd -S your-server.database.windows.net -d db-healthops -U sqladminkb -P "YOUR_PASSWORD" -N -b -i "sql\02_upsert_objects.sql"
 sqlcmd -S your-server.database.windows.net -d db-healthops -U sqladminkb -P "YOUR_PASSWORD" -N -b -i "sql\03_data_quality.sql"
 sqlcmd -S your-server.database.windows.net -d db-healthops -U sqladminkb -P "YOUR_PASSWORD" -N -b -i "sql\04_audit.sql"
 
-## 4️⃣ Run End-to-End Pipeline
+### 4️⃣ Run End-to-End Pipeline
 
 ..\run_etl.bat or python scripts/etl_load.py directly
 
----
 
-## 🧠 Example Output
+### 🧠 Example Output
 
 Run 24 complete. Final Claim rows: 11. Rejects this run: 5
 DQ rejects in last 24h:
