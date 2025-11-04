@@ -44,7 +44,8 @@ It’s designed to mirror what a professional Data Engineer would build in an en
 cd scripts
 python -m venv .venv
 . .venv/Scripts/activate
-pip install -r requirements.txt`
+pip install -r requirements.txt
+```
 
 ### 2️⃣ Configure Credentials (config/.env)
 
